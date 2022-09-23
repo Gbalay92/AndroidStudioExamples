@@ -1,0 +1,5 @@
+<resources>
+    <string name="aceptar">ACEPTAR</string>
+    <string name="nombre">"Escribe tu nombre: "</string>
+    <string name="app_name">HolaUsuario</string>
+</resources>
