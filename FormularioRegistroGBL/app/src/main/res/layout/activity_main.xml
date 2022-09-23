@@ -270,7 +270,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chk"
         app:layout_constraintBottom_toTopOf="@+id/btnReg"
-         />
+        />
     <Button android:id="@+id/btnReg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
