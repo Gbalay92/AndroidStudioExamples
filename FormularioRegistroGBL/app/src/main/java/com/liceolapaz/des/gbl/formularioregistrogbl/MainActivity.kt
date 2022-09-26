@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
                         txtExit.text="las contraseñas deben ser iguales"
 
-                }else if(name.text.isEmpty()|| secondName.text.isEmpty() || password.text.isEmpty() || mail.text.isEmpty()){
+                }else if(name.text.isEmpty()|| secondName.text.isEmpty() || password.text.isEmpty() || mail.text.isEmpty() || sexo.checkedRadioButtonId==-1){
                     txtExit.text="Los campos obligatorios deben ser rellenados"
 
                 }
