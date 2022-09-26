@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         private lateinit var fecha : EditText
         private lateinit var phone : EditText
         private lateinit var btnRegister : Button
+        private lateinit var txtExit : TextView
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
@@ -40,8 +41,22 @@ class MainActivity : AppCompatActivity() {
             sexo=findViewById(R.id.grbGrupo1)
             fecha=findViewById(R.id.inputFecha)
             btnRegister=findViewById(R.id.btnReg)
+            txtExit=findViewById(R.id.txtExit)
+
+
+
 
             btnRegister.setOnClickListener{
+                if(password.text.toString()!=password2.text.toString()){
+
+                        txtExit.text="las contraseñas deben ser iguales"
+
+                }else if(name.text.isEmpty()|| secondName.text.isEmpty() || password.text.isEmpty() || mail.text.isEmpty()){
+                    txtExit.text="Los campos obligatorios deben ser rellenados"
+
+                }
+                else{
+
                 val intent= Intent(this@MainActivity,ShowInformation::class.java)
 
                 intent.putExtra("NAME", name.text.toString())
@@ -52,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("FECHA", fecha.text.toString())
 
                 startActivity(intent)
-
+                }
 
             }
 
