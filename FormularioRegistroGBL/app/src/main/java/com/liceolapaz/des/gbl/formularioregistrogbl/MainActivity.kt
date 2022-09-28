@@ -59,9 +59,11 @@ class MainActivity : AppCompatActivity() {
 
                 val intent= Intent(this@MainActivity,ShowInformation::class.java)
 
+
                 intent.putExtra("NAME", name.text.toString())
                 intent.putExtra("SNAME", secondName.text.toString())
-                intent.putExtra("PHONE", phone.text.toString())
+                    if(phone.text.isNotEmpty()){
+                intent.putExtra("PHONE", phone.text.toString())}
                 intent.putExtra("MAIL", mail.text.toString())
                 intent.putExtra("SEX", sexo.checkedRadioButtonId.toString())
                 intent.putExtra("FECHA", fecha.text.toString())
