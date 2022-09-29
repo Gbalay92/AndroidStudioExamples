@@ -15,17 +15,17 @@
 
     <TextView
         android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="Formulario de registro"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        app:layout_constraintVertical_bias="0"
-        android:text="Formulario de registro"
-        android:textAlignment="center"
+        app:layout_constraintBottom_toTopf="@+id/apellidos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/name"
@@ -33,12 +33,13 @@
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
+        android:gravity="center"
         android:text="* Nombre"
         app:layout_constraintBottom_toTopOf="@id/inputName"
         app:layout_constraintEnd_toEndOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         />
 
     <TextView
@@ -47,11 +48,12 @@
         android:layout_height="0dp"
         android:text="* Apellidos"
         android:layout_marginTop="30dp"
+        android:gravity="center"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintBottom_toTopOf="@id/inputAp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/inputName"
@@ -82,6 +84,8 @@
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:text="* Contraseña"
+        android:gravity="center"
+
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="0.03"
         app:layout_constraintEnd_toEndOf="@+id/guideline"
@@ -106,6 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:text="* Repetir Contraseña"
+        android:gravity="center"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="0.03"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,6 +134,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:text="Telefono"
+        android:gravity="center"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="0.03"
         app:layout_constraintEnd_toEndOf="@+id/guideline"
@@ -153,6 +159,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:text="Fecha de nacimiento"
+        android:gravity="center"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="0.03"
         app:layout_constraintEnd_toEndOf="parent"
@@ -177,6 +184,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:text="Pais"
+        android:gravity="center"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="0.03"
         app:layout_constraintEnd_toEndOf="@+id/guideline"
@@ -201,6 +209,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:text="* Correo electronico"
+        android:gravity="center"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="0.03"
         app:layout_constraintEnd_toEndOf="parent"
@@ -224,6 +233,8 @@
         android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:text="* Sexo"
+        android:gravity="center"
+
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="0.03"
         app:layout_constraintEnd_toEndOf="@+id/guideline"
@@ -269,6 +280,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:textAlignment="center"
+        android:textColor="#F44336"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chk"

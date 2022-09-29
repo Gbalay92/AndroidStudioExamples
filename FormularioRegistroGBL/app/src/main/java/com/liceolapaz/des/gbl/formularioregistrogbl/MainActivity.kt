@@ -62,7 +62,6 @@ class MainActivity : AppCompatActivity() {
 
                 intent.putExtra("NAME", name.text.toString())
                 intent.putExtra("SNAME", secondName.text.toString())
-                    if(phone.text.isNotEmpty()){
                 intent.putExtra("PHONE", phone.text.toString())}
                 intent.putExtra("MAIL", mail.text.toString())
                 intent.putExtra("SEX", sexo.checkedRadioButtonId.toString())
@@ -80,4 +79,3 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-}
