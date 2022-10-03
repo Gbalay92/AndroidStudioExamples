@@ -167,9 +167,12 @@
 
     <EditText
         android:id="@+id/inputFecha"
+        android:datePickerMode="calendar"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="10dp"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/fechaNac"
@@ -231,7 +234,6 @@
         android:layout_marginStart="10dp"
         android:text="* Sexo"
         android:gravity="center"
-
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintVertical_bias="0.03"
         app:layout_constraintEnd_toEndOf="@+id/guideline"
