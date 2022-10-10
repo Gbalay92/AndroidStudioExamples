@@ -26,10 +26,7 @@
         android:id="@+id/showPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/showBoletin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
     <TextView
         android:id="@+id/showPais"
         android:layout_width="wrap_content"

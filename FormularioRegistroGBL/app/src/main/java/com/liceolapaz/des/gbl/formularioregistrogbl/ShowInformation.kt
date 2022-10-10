@@ -23,7 +23,6 @@ class ShowInformation : AppCompatActivity() {
         sexo=findViewById(R.id.showSex)
         fecha=findViewById(R.id.showFecha)
         phone=findViewById(R.id.showPhone)
-        boletin=findViewById(R.id.showBoletin)
         pais=findViewById(R.id.showPais)
 
         name.text="Nombre: " + intent.getStringExtra("NAME")
@@ -32,6 +31,7 @@ class ShowInformation : AppCompatActivity() {
         sexo.text="Genero: "+ intent.getStringExtra("SEX")
         fecha.text="Fecha de nacimiento: "+ intent.getStringExtra("FECHA")
         phone.text="Teléfono: "+ intent.getStringExtra("PHONE")
+        pais.text="Pais: "+ intent.getStringExtra("PAIS")
 
 
 

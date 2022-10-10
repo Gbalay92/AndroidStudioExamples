@@ -20,7 +20,7 @@ class MainActivity() : AppCompatActivity() {
     private lateinit var phone: EditText
     private lateinit var btnRegister: Button
     private lateinit var txtExit: TextView
-
+    private lateinit var btnSalir : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,18 +28,7 @@ class MainActivity() : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         inputPais = findViewById(R.id.inputPais)
-        val adaptador =
-            ArrayAdapter.createFromResource(
-                this, R.array.array_pais,
-                android.R.layout.simple_spinner_item
-            )
-        adaptador.setDropDownViewResource(
-            android.R.layout.simple_spinner_dropdown_item
-        )
-        inputPais.adapter = adaptador
-
-
-
+        extractPais()
         name = findViewById(R.id.inputName)
         secondName = findViewById(R.id.inputAp)
         phone = findViewById(R.id.inputPhone)
@@ -52,8 +41,11 @@ class MainActivity() : AppCompatActivity() {
         btnRegister = findViewById(R.id.btnReg)
         txtExit = findViewById(R.id.txtExit)
         var fechaPut = extraerFecha(fecha)
+        btnSalir=findViewById(R.id.btnSalir)
 
-
+        btnSalir.setOnClickListener {
+            finishAndRemoveTask()
+        }
 
         btnRegister.setOnClickListener {
             if (password.text.toString() != password2.text.toString()) {
@@ -74,6 +66,8 @@ class MainActivity() : AppCompatActivity() {
                 intent.putExtra("MAIL", mail.text.toString())
                 intent.putExtra("SEX", genero.toString())
                 intent.putExtra("FECHA", fechaPut.toString())
+                intent.putExtra("PAIS", inputPais.selectedItem.toString())
+
 
                 startActivity(intent)
             }
@@ -82,12 +76,28 @@ class MainActivity() : AppCompatActivity() {
 
     }
 
-    private fun recuperarGenero(sexo: RadioGroup?): Toast? {
-        val genero: RadioButton? = sexo?.let { findViewById(it.checkedRadioButtonId) }
-        if (genero != null) {
-            return Toast.makeText(applicationContext, genero.text, Toast.LENGTH_SHORT)
+    private fun extractPais() {
+        val adaptador =
+            ArrayAdapter.createFromResource(
+                this, R.array.array_pais,
+                android.R.layout.simple_spinner_item
+            )
+        adaptador.setDropDownViewResource(
+            android.R.layout.simple_spinner_dropdown_item
+        )
+        inputPais.adapter = adaptador
+    }
+
+    private fun recuperarGenero(sexo: RadioGroup?): String {
+        val rbId= sexo?.checkedRadioButtonId
+        if(rbId==R.id.rbOpcion1){
+            return "Hombre"
+        }else{
+            return "Mujer"
+
         }
-            return null
+
+
     }
     private fun extraerFecha(fecha: EditText) : String {
         var cal = Calendar.getInstance()
@@ -96,11 +106,11 @@ class MainActivity() : AppCompatActivity() {
         var dayOfMonth = cal.get(Calendar.DAY_OF_MONTH)
 
         fecha.setOnClickListener {
-            var monthr=month+1
+
             val datePickerDialog = DatePickerDialog(
                 this,
                 { view, year, month, dayOfMonth ->
-                    fecha.setText("$dayOfMonth/$monthr/$year")
+                    fecha.setText("$dayOfMonth/$month+1/$year")
                 },
                 year,
                 month,
@@ -111,7 +121,8 @@ class MainActivity() : AppCompatActivity() {
 
         }
 
-        return "$dayOfMonth/$month/$year"
+
+        return "$dayOfMonth/$month+1/$year"
     }
 
 
