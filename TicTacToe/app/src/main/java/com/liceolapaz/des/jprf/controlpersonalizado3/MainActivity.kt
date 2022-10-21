@@ -26,19 +26,18 @@ class MainActivity : AppCompatActivity() {
 
         terTablero.setOnCasillaSeleccionadaListener { fila, columna ->
             lblCasilla.text = "Última casilla seleccionada: ($fila, $columna)"
-
-            if(jugador.text.equals(jugador1)){
-                jugador.text=jugador2
-            }else if(jugador.text.equals(jugador2)){
-                jugador.text = jugador1
-            }
-
             ganador=terTablero.comprobarGanador()
             if (ganador){
                 jugador.text = "Ganador: "+ jugador.text
                 //terTablero.setClickable(false)
                 btnFicha.setVisibility(View.VISIBLE)
+            }else if(jugador.text.equals(jugador1)){
+                jugador.text=jugador2
+            }else if(jugador.text.equals(jugador2)){
+                jugador.text = jugador1
             }
+
+
 
 
         }

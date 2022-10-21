@@ -196,8 +196,8 @@ class TresEnRaya : View {
         val col = (event.x / (measuredWidth / 3)).toInt()
 
             //Actualizamos el tablero
-        if(getCasilla(fil,col)==FICHA_O || getCasilla(fil,col)==FICHA_X){
-            return false
+        return if(getCasilla(fil,col)==FICHA_O || getCasilla(fil,col)==FICHA_X){
+            false
         }else {
             setCasilla(fil, col, fichaActiva)
             alternarFichaActiva()
@@ -207,7 +207,7 @@ class TresEnRaya : View {
             //Refrescamos el control
             this.invalidate()
 
-            return super.onTouchEvent(event)
+            super.onTouchEvent(event)
         }
     }
 
