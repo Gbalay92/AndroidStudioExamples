@@ -24,24 +24,25 @@ class MainActivity : AppCompatActivity() {
         terTablero = findViewById(R.id.tablero)
         println(terTablero.getCasilla(0,0))
 
-        terTablero.setOnCasillaSeleccionadaListener { fila, columna ->
+        terTablero.setOnCasillaSeleccionadaListener{ fila, columna ->
+            var contador=0
+            ganador = terTablero.comprobarGanador()
             lblCasilla.text = "Última casilla seleccionada: ($fila, $columna)"
-            ganador=terTablero.comprobarGanador()
-            if (ganador){
-                jugador.text = "Ganador: "+ jugador.text
+            if (ganador || contador>=9) {
+                if(ganador)
+                    jugador.text = "Ganador: " + jugador.text
                 //terTablero.setClickable(false)
                 btnFicha.setVisibility(View.VISIBLE)
-            }else if(jugador.text.equals(jugador1)){
-                jugador.text=jugador2
-            }else if(jugador.text.equals(jugador2)){
+            } else if (jugador.text.equals(jugador1)) {
+                contador++
+                jugador.text = jugador2
+            } else if (jugador.text.equals(jugador2)) {
+                contador++
                 jugador.text = jugador1
             }
 
 
-
-
         }
-
         btnFicha = findViewById(R.id.btnFicha)
         btnFicha.setOnClickListener {
            finish()

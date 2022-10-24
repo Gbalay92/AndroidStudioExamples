@@ -198,6 +198,8 @@ class TresEnRaya : View {
             //Actualizamos el tablero
         return if(getCasilla(fil,col)==FICHA_O || getCasilla(fil,col)==FICHA_X){
             false
+        }else if(comprobarGanador()==true){
+            false
         }else {
             setCasilla(fil, col, fichaActiva)
             alternarFichaActiva()
